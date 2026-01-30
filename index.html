@@ -1,131 +1,194 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raja Technician Services | Appliance Repair</title>
+<title>Raja Technician Services | Professional Appliance Repair</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-    --primary:#0d6efd;
-    --secondary:#198754;
-    --danger:#dc3545;
-    --bg:#f8f9fa;
-    --text:#333;
+    --primary:#0a2540;
+    --accent:#1db954;
+    --light:#f5f7fa;
+    --dark:#111;
+    --danger:#e63946;
 }
+
 *{box-sizing:border-box;}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     margin:0;
-    font-family:"Segoe UI",Arial,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
+    font-family:'Poppins',sans-serif;
+    background:var(--light);
+    color:#333;
 }
+
+/* HERO */
 header{
-    background:linear-gradient(135deg,var(--primary),#084298);
+    background:linear-gradient(135deg,#0a2540,#102a43);
     color:#fff;
-    padding:45px 20px;
+    padding:80px 20px;
     text-align:center;
 }
-header h1{margin:0;font-size:32px;}
-header p{margin:10px 0 20px;font-size:17px;}
+
+header h1{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:18px;
+    opacity:.95;
+}
+
+.hero-btn{
+    margin-top:25px;
+}
 
 .btn{
     display:inline-block;
-    padding:13px 24px;
-    border-radius:6px;
-    text-decoration:none;
+    padding:14px 28px;
+    border-radius:8px;
     font-weight:600;
-    margin:5px;
+    text-decoration:none;
+    margin:6px;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--accent);
     color:#fff;
 }
-.btn-primary{background:var(--secondary);}
-.btn-danger{background:var(--danger);}
 
+.btn-danger{
+    background:var(--danger);
+    color:#fff;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    opacity:.95;
+}
+
+/* SECTIONS */
 section{
-    max-width:1100px;
+    max-width:1200px;
     margin:auto;
-    padding:50px 20px;
+    padding:70px 20px;
 }
+
 h2{
+    text-align:center;
     color:var(--primary);
-    margin-bottom:30px;
-    font-size:26px;
-    text-align:center;
+    font-size:30px;
+    margin-bottom:40px;
 }
-.grid{
+
+/* SERVICES */
+.services{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
 }
-.card{
+
+.service-card{
     background:#fff;
-    border-radius:12px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    border-radius:16px;
     overflow:hidden;
-    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    cursor:pointer;
+    transition:.3s;
 }
-.card img{
+
+.service-card:hover{
+    transform:translateY(-6px);
+}
+
+.service-card img{
     width:100%;
-    height:160px;
+    height:180px;
     object-fit:cover;
 }
-.card h3{
-    margin:15px 0 10px;
-    color:#0b5ed7;
-}
-.card p{
-    font-size:14px;
-    padding:0 15px 20px;
+
+.service-card div{
+    padding:20px;
 }
 
-/* FORM */
-form{max-width:600px;margin:auto;}
-form label{
-    display:block;
-    margin-top:15px;
-    font-weight:600;
+.service-card h3{
+    margin:0;
+    color:#0a2540;
 }
-form input,form select,form textarea{
+
+/* BOOKING */
+.booking{
+    background:#fff;
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    max-width:700px;
+    margin:auto;
+}
+
+label{
+    font-weight:500;
+    display:block;
+    margin-top:18px;
+}
+
+input,select,textarea{
     width:100%;
-    padding:12px;
-    margin-top:5px;
-    border-radius:6px;
+    padding:14px;
+    margin-top:6px;
+    border-radius:10px;
     border:1px solid #ccc;
     font-size:15px;
+    font-family:'Poppins';
 }
-form textarea{resize:none;height:90px;}
 
+textarea{
+    resize:none;
+    height:100px;
+}
+
+/* FOOTER */
 footer{
-    background:#0b1d3a;
+    background:#0a2540;
     color:#ccc;
     text-align:center;
-    padding:20px;
-    font-size:14px;
+    padding:25px;
 }
 
-/* Floating buttons */
+/* FLOATING BUTTONS */
 .floating{
     position:fixed;
-    right:15px;
-    bottom:15px;
+    bottom:20px;
+    right:20px;
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:12px;
     z-index:999;
 }
+
 .float-btn{
-    width:55px;
-    height:55px;
+    width:58px;
+    height:58px;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
     color:#fff;
-    font-size:22px;
+    font-size:24px;
     text-decoration:none;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
+
 .call{background:var(--danger);}
 .whatsapp{background:#25D366;}
 </style>
@@ -133,75 +196,76 @@ footer{
 
 <body>
 
+<!-- HERO -->
 <header>
     <h1>Raja Technician Services</h1>
-    <p>Professional AC, Refrigerator, Cooler & Fan Repair at Your Doorstep</p>
-    <a href="tel:9XXXXXXXXX" class="btn btn-danger">Call Now</a>
-    <a href="https://wa.me/919XXXXXXXXX" class="btn btn-primary">Book on WhatsApp</a>
+    <p>Trusted AC, Refrigerator, Cooler & Fan Repair at Your Doorstep</p>
+    <div class="hero-btn">
+        <a href="#booking" class="btn btn-primary">Book Service</a>
+        <a href="tel:9XXXXXXXXX" class="btn btn-danger">Call Now</a>
+    </div>
 </header>
 
+<!-- SERVICES -->
 <section>
 <h2>Our Services</h2>
-<div class="grid">
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952">
-        <h3>AC Repair</h3>
-        <p>Installation, servicing & gas charging.</p>
-    </div>
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da">
-        <h3>Refrigerator Repair</h3>
-        <p>Cooling issues, gas & compressor repair.</p>
-    </div>
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1597008641621-b6efb5f8b84a">
-        <h3>Air Cooler Repair</h3>
-        <p>Motor, pump & cooling pad service.</p>
-    </div>
-    <div class="card">
-        <img src="https://images.unsplash.com/photo-1598300056393-4aac492f4344">
-        <h3>Fan Repair</h3>
-        <p>Ceiling, table & exhaust fan repair.</p>
-    </div>
+
+<div class="services">
+
+<div class="service-card" onclick="selectService('AC')">
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952">
+<div><h3>AC Repair</h3></div>
+</div>
+
+<div class="service-card" onclick="selectService('Refrigerator')">
+<img src="https://images.unsplash.com/photo-1604014237800-1c9102c219da">
+<div><h3>Refrigerator Repair</h3></div>
+</div>
+
+<div class="service-card" onclick="selectService('Air Cooler')">
+<img src="https://images.unsplash.com/photo-1597008641621-b6efb5f8b84a">
+<div><h3>Air Cooler Repair</h3></div>
+</div>
+
+<div class="service-card" onclick="selectService('Fan')">
+<img src="https://images.unsplash.com/photo-1598300056393-4aac492f4344">
+<div><h3>Fan Repair</h3></div>
+</div>
+
 </div>
 </section>
 
-<section>
+<!-- BOOKING -->
+<section id="booking">
 <h2>Book a Service</h2>
-<div class="card" style="padding:25px;">
-<form onsubmit="sendWhatsApp(); return false;">
-    <label>Name</label>
-    <input type="text" id="name" required>
 
-    <label>Phone Number</label>
-    <input type="tel" id="phone" required>
+<div class="booking">
+<form onsubmit="sendWhatsApp();return false;">
 
-    <label>Appliance</label>
-    <select id="appliance" required>
-        <option value="">Select</option>
-        <option>AC</option>
-        <option>Refrigerator</option>
-        <option>Air Cooler</option>
-        <option>Fan</option>
-        <option>Other</option>
-    </select>
+<label>Name</label>
+<input id="name" required>
 
-    <label>Problem Description</label>
-    <textarea id="problem" required></textarea>
+<label>Phone</label>
+<input id="phone" required>
 
-    <button class="btn btn-primary" style="width:100%;margin-top:20px;">
-        Book on WhatsApp
-    </button>
+<label>Appliance</label>
+<select id="appliance" required>
+<option value="">Select Appliance</option>
+<option>AC</option>
+<option>Refrigerator</option>
+<option>Air Cooler</option>
+<option>Fan</option>
+<option>Other</option>
+</select>
+
+<label>Problem Description</label>
+<textarea id="problem" required></textarea>
+
+<button class="btn btn-primary" style="width:100%;margin-top:25px;">
+Book on WhatsApp
+</button>
+
 </form>
-</div>
-</section>
-
-<section>
-<h2>Contact</h2>
-<div class="card" style="padding:25px;">
-<p><strong>Phone:</strong> 9XXXXXXXXX</p>
-<p><strong>WhatsApp:</strong> 9XXXXXXXXX</p>
-<p><strong>Service Area:</strong> Your City Name</p>
 </div>
 </section>
 
@@ -209,27 +273,30 @@ footer{
 © 2026 Raja Technician Services • All Rights Reserved
 </footer>
 
+<!-- FLOATING -->
 <div class="floating">
 <a href="tel:9XXXXXXXXX" class="float-btn call">📞</a>
 <a href="https://wa.me/919XXXXXXXXX" class="float-btn whatsapp">💬</a>
 </div>
 
 <script>
+function selectService(service){
+    document.getElementById("appliance").value = service;
+    document.getElementById("booking").scrollIntoView({behavior:'smooth'});
+}
+
 function sendWhatsApp(){
-    var name=document.getElementById("name").value;
-    var phone=document.getElementById("phone").value;
-    var appliance=document.getElementById("appliance").value;
-    var problem=document.getElementById("problem").value;
+    let msg =
+`Hello Raja,
 
-    var msg=
-    "Hello Raja,%0A%0A"+
-    "I want to book a repair service.%0A%0A"+
-    "Name: "+name+"%0A"+
-    "Phone: "+phone+"%0A"+
-    "Appliance: "+appliance+"%0A"+
-    "Problem: "+problem;
+I want to book a repair service.
 
-    window.open("https://wa.me/919XXXXXXXXX?text="+msg,"_blank");
+Name: ${name.value}
+Phone: ${phone.value}
+Appliance: ${appliance.value}
+Problem: ${problem.value}`;
+
+    window.open("https://wa.me/919XXXXXXXXX?text="+encodeURIComponent(msg),"_blank");
 }
 </script>
 
